@@ -1,0 +1,22 @@
+/*
+Theme Name: Pyxll
+Theme Slug: pyxll
+Theme URI: https://www.pyxll.com/blog/
+Author: Christopher Amirian
+Author URI: http://christopher.am
+Description: Pyxll Website Blog Theme
+License: GPL 2 License
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pyxll
+Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+GitHub Theme URI: iconoclastic/chrshowcase
+*/
+
+/*
+This file is just used to identify the theme in WordPress.
+The compiled CSS output can be found in /css/theme.css
+The SASS sources for it can be found in /sass/
+The dependencies can be found in /src/ after running "gulp copy-assets" terminal command
+
+...and now go out and play!
+*/

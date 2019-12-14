@@ -9,7 +9,7 @@
 	}
 }
 
-#featured {
+#featured, #trending {
 	display: flex;
 	flex-flow: row wrap;
 	@include respond-above(xs) {
@@ -17,5 +17,17 @@
 			flex: 50%;
 		}
 	}
+	img.wp-post-image,
+	article img,
+	figure,
+	img,
+	#secondary img {
+		max-width: 100%;
+		height: 200px;
+		object-fit: contain;
+		margin: auto;
+		display: block;
+	}
 }
+
 

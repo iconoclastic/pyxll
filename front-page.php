@@ -56,6 +56,93 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php else : ?>
 
+					<?php //get_template_part( 'loop-templates/content', 'none' ); ?>
+
+				<?php endif; ?>
+
+			</main><!-- #featured -->
+
+			<main class="site-trending" id="trending">
+				<?php
+					$args = array(
+						'posts_per_page'	=> 2,
+						'post_type'		=> 'post',
+						'meta_key'		=> 'is_trending',
+						'meta_value'	=> 1
+					);
+					$the_query = new WP_Query( $args );
+				?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+
+					<?php /* Start the Loop */ ?>
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+						<?php
+
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/excerpt', 'featured' );
+						?>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_query(); ?>
+
+				<?php else : ?>
+
+					<?php //get_template_part( 'loop-templates/content', 'none' ); ?>
+
+				<?php endif; ?>
+
+			</main><!-- #trending -->
+
+			<main class="site-main" id="main">
+				<?php
+					$args = array(
+						'post_type'			=> 'post',
+						'posts_pre_page'	=> -1,
+						'meta_query'		=> array(
+							'relation' 			=> 'AND',
+							array(
+								'key'			=> 'is_featured',
+								'value'			=> 0,
+								'compare'		=> '='
+							),
+							array(
+								'key'			=> 'is_trending',
+								'value'			=> 0,
+								'compare'		=> '='
+							)
+						),
+					);
+					$the_query = new WP_Query( $args );
+				?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+
+					<?php /* Start the Loop */ ?>
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+						<?php
+
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/excerpt', 'featured' );
+						?>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_query(); ?>
+
+				<?php else : ?>
+
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 				<?php endif; ?>

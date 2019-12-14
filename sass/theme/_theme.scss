@@ -9,3 +9,13 @@
 	}
 }
 
+#featured {
+	display: flex;
+	flex-flow: row wrap;
+	@include respond-above(xs) {
+		& > article {
+			flex: 50%;
+		}
+	}
+}
+

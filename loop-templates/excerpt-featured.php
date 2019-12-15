@@ -11,7 +11,13 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php
+		if ( has_post_thumbnail() ) { ?>
+			<figure>
+				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			</figure>
+		<?php }
+	?>
 
 	<header class="entry-header">
 
@@ -25,20 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-
-		<?php the_excerpt(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
+	<?php the_excerpt(); ?>
 
 	<footer class="entry-footer">
 

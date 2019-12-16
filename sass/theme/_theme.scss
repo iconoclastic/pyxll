@@ -27,7 +27,7 @@ body {
 	}
 }
 
-.blog {
+:not(.single) {
 	#featured, #trending, #main {
 		article {
 			box-shadow: 0px 3px 7px $light-gray;
@@ -148,8 +148,26 @@ body {
 	}
 }
 
-.blog, .single {
-	.sharedaddy {
-		display: none;
+.sharedaddy {
+	display: none;
+}
+
+.search {
+	#main {
+		.page-header,
+		.entry-summary {
+			margin-left: $spacer;
+			margin-right: $spacer;
+		}
+		.entry-meta {
+			display: none;
+		}
+	}
+}
+
+nav {
+	& > ul.pagination {
+		margin-left: $spacer;
+		margin-right: $spacer;
 	}
 }

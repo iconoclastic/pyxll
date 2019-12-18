@@ -14,14 +14,18 @@ defined( 'ABSPATH' ) || exit;
 	<?php
 		if ( has_post_thumbnail() ) { ?>
 			<figure>
-				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+				<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
+					<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+				</a>
 			</figure>
 		<?php }
 	?>
 
 	<header class="entry-header">
 
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
+			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		</a>
 
 		<div class="entry-meta">
 

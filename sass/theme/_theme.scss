@@ -30,17 +30,25 @@ body {
 :not(.single) {
 	#featured, #trending, #main {
 		article {
-			box-shadow: 0px 3px 7px $light-gray;
 			margin: $spacer;
+			margin-bottom: $spacer * 3;
 			flex: calc(100% - #{$spacer * 2});
 			display: flex;
 			flex-flow: column wrap;
 			justify-content: flex-start;
-			h2 {
-				color: $primary !important;
-				font-size: $font-size-lg !important;
-				margin-top: $spacer;
-				margin-bottom: $spacer;
+			header.entry-header {
+				margin: 0;
+				a {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				h2 {
+					color: $primary !important;
+					font-size: $font-size-lg !important;
+					margin-top: $spacer / 2;
+					margin-bottom: 0;
+				}
 			}
 			figure {
 				margin: 0 auto;
@@ -48,20 +56,22 @@ body {
 				flex-flow: column wrap;
 				justify-content: flex-start;
 				width: 100%;
-				@include respond-above(md) {
-					& {
-						min-height: 175px;
-					}
-				}
-				@include respond-above(lg) {
-					& {
-						min-height: 210px;
-					}
-				}
+				overflow: hidden;
+				border: 1px solid $light-gray;
 				img {
-					object-fit: contain;
+					object-fit: cover;
 					display: block;
 					width: 100%;
+					@include respond-above(md) {
+						& {
+							min-height: 175px;
+						}
+					}
+					@include respond-above(lg) {
+						& {
+							min-height: 210px;
+						}
+					}
 				}
 			}
 			header, & > p {
@@ -75,7 +85,8 @@ body {
 			& > p {
 				display: inline-flex;
 				flex-flow: column wrap;
-
+				margin: $spacer / 2 0;
+				color: $light-gray;
 			}
 		}
 	}
@@ -95,6 +106,23 @@ body {
 			margin-top: 0;
 		}
 	}
+	#trending ~ #main {
+		margin-top: $spacer;
+		padding-top: $spacer * 4;
+		border-top: 1px solid $light-gray;
+	}
+
+	#main {
+		article {
+			header.entry-header {
+				h2 {
+					margin-top: $spacer;
+					margin-bottom: $spacer;
+				}
+			}
+		}
+	}
+
 }
 
 .single {
@@ -115,9 +143,9 @@ body {
 				list-style: none;
 				padding-left: 0;
 				li {
-					padding-bottom: $spacer;
+					padding-bottom: $spacer / 2;
     				border-bottom: 1px solid $light-gray;
-    				margin-bottom: $spacer;
+    				margin-bottom: $spacer / 2;
 				}
 			}
 		}

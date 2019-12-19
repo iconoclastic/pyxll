@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php
 		if ( has_post_thumbnail() ) { ?>
-			<figure>
+			<figure class="the-featured-image-wrapper">
 				<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
 					<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 				</a>

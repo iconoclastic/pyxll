@@ -37,6 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php if ( $the_query->have_posts() ) : ?>
 
+					<small class="type-headline">Featured</small>
 					<?php /* Start the Loop */ ?>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
@@ -75,6 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php if ( $the_query->have_posts() ) : ?>
 
+					<small class="type-headline">Trending</small>
 					<?php /* Start the Loop */ ?>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
@@ -124,6 +126,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php if ( $the_query->have_posts() ) : ?>
 
+					<small class="type-headline">Latest</small>
 					<?php /* Start the Loop */ ?>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 

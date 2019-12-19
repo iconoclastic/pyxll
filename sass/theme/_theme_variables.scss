@@ -2,14 +2,16 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap');
 $primary: #1D6035;
 $navbar-light-color: #333;
 $navbar-light-hover-color: #257246;
 $link-hover-color: #257246;
-$font-family-sans-serif: 'Lato1', sans-serif;
+$font-family-sans-serif: 'Noto Sans', sans-serif;
 $enable-rounded: false;
 $light-gray: rgba(0,0,0,0.3);
+$heading-letter-spacing: 1.2px;
+$text-letter-spacing: 1px;
 
 $breakpoints: (
   xs: 576px,

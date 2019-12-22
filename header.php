@@ -19,6 +19,45 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<style type="text/css">
+		<?php
+			$the_h1_family = get_field('h1_font_family', 'this_is_christopher');
+			$the_h1_family = str_replace(' ', '+', $the_h1_family);
+			$the_h2_family = get_field('h2_font_family', 'this_is_christopher');
+			$the_h2_family = str_replace(' ', '+', $the_h2_family);
+			$the_h3_family = get_field('h3_font_family', 'this_is_christopher');
+			$the_h3_family = str_replace(' ', '+', $the_h3_family);
+			$the_body_family = get_field('body_font_family', 'this_is_christopher');
+			$the_body_family = str_replace(' ', '+', $the_body_family);
+			$the_code_family = get_field('code_font_family', 'this_is_christopher');
+			$the_code_family = str_replace(' ', '+', $the_code_family);
+		?>
+		@import url('https://fonts.googleapis.com/css?family=<?php echo $the_h1_family; ?>&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=<?php echo $the_h2_family; ?>&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=<?php echo $the_h3_family; ?>&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=<?php echo $the_body_family; ?>&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=<?php echo $the_code_family; ?>&display=swap');
+		body h1 {
+			font-size: <?php the_field('h1_font_size', 'this_is_christopher'); ?>px;
+			font-family: "<?php the_field('h1_font_family', 'this_is_christopher'); ?>", sans-serif;
+		}
+		body h2 {
+			font-size: <?php the_field('h2_font_size', 'this_is_christopher'); ?>px;
+			font-family: "<?php the_field('h2_font_family', 'this_is_christopher'); ?>", sans-serif;
+		}
+		body h3, body small {
+			font-size: <?php the_field('h3_font_size', 'this_is_christopher'); ?>px;
+			font-family: "<?php the_field('h3_font_family', 'this_is_christopher'); ?>", sans-serif;
+		}
+		body, body p, body a {
+			font-size: <?php the_field('body_font_size', 'this_is_christopher'); ?>px;
+			font-family: "<?php the_field('body_font_family', 'this_is_christopher'); ?>", sans-serif;
+		}
+		body .syntaxhighlighter a, body .syntaxhighlighter div, body .syntaxhighlighter code, body .syntaxhighlighter table, body .syntaxhighlighter table td, body .syntaxhighlighter table tr, body .syntaxhighlighter table tbody, body .syntaxhighlighter table thead, body .syntaxhighlighter table caption, body .syntaxhighlighter textarea {
+			font-family: "<?php the_field('code_font_family', 'this_is_christopher'); ?>", sans-serif !important;
+			font-size: <?php the_field('code_font_size', 'this_is_christopher'); ?>px !important;
+		}
+	</style>
 </head>
 
 <body <?php body_class(); ?>>

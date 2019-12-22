@@ -148,6 +148,23 @@ if ( ! function_exists( 'understrap_customize_preview_js' ) ) {
 			'20130508',
 			true
 		);
+
+
 	}
 }
 add_action( 'customize_preview_init', 'understrap_customize_preview_js' );
+
+function load_admin_style() {
+	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/customizer.css');
+}
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+
+$panel_id = acf_add_customizer_panel(array(
+    'title'        => 'Theme General Options',
+));
+acf_add_customizer_section(array(
+	'title'        => 'Typography',
+	'storage_type' => 'option',
+	'panel'		   => $panel_id,
+	'post_id'      => 'this_is_christopher',
+));

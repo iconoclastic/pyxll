@@ -3,15 +3,17 @@
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap');
-$primary: #1D6035;
+$primary: #257247;
+$color: #257247;
 $navbar-light-color: #333;
-$navbar-light-hover-color: #257246;
-$link-hover-color: #257246;
+$navbar-light-hover-color: #257247;
+$link-hover-color: #257247;
 $font-family-sans-serif: 'Noto Sans', sans-serif;
 $enable-rounded: false;
 $light-gray: rgba(0,0,0,0.3);
 $heading-letter-spacing: inherit;
 $text-letter-spacing: inherit;
+$line-height-base: 1.25;
 
 $breakpoints: (
   xs: 576px,

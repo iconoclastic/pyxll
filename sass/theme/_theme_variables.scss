@@ -10,8 +10,8 @@ $link-hover-color: #257246;
 $font-family-sans-serif: 'Noto Sans', sans-serif;
 $enable-rounded: false;
 $light-gray: rgba(0,0,0,0.3);
-$heading-letter-spacing: 1.2px;
-$text-letter-spacing: 1px;
+$heading-letter-spacing: inherit;
+$text-letter-spacing: inherit;
 
 $breakpoints: (
   xs: 576px,

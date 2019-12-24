@@ -11,6 +11,7 @@
 }
 
 body {
+	-webkit-font-smoothing: antialiased;
 	.type-headline {
 		color: $primary;
 		display: block;
@@ -185,7 +186,7 @@ body {
 		&:first-child {
 			margin-top: 0;
 		}
-		&.widget_recent_entries {
+		&.widget_recent_entries, &.cat-post-widget {
 			ul {
 				list-style: none;
 				padding-left: 0;
@@ -200,6 +201,13 @@ body {
 			}
 		}
 	}
+}
+
+button {
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+	border-color: $pagination-active-border-color;
+	padding: $spacer * 0.5 $spacer;
 }
 
 .btn-secondary {

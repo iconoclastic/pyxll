@@ -106,11 +106,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<main class="site-main" id="main">
 				<?php
+
 					$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 					$args_posts = array(
 						'post_type'			=> 'post',
 						'posts_pre_page'	=> -1,
-						'paged'				=> $paged,
 						'meta_query'		=> array(
 							'relation' 			=> 'AND',
 							array(
@@ -124,9 +124,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 								'compare'		=> '='
 							)
 						),
+						'paged'				=> $paged
 					);
 					$the_query_posts = new WP_Query( $args_posts );
-
 				?>
 
 				<?php if ( $the_query_posts->have_posts() ) : ?>
@@ -158,7 +158,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php understrap_pagination(array(
+				'total' 	=> $the_query_posts->max_num_pages
+			)); ?>
 
 			<!-- Do the right sidebar check -->
 			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>

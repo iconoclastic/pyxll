@@ -12,6 +12,28 @@
 
 body {
 	-webkit-font-smoothing: antialiased;
+	&.home[class*="paged-"] {
+		#main {
+			& > article {
+				&:first-of-type {
+					margin-top: 0;
+					.entry-header {
+						.entry-title {
+							margin-top: 0;
+						}
+					}
+					.the-featured-image-wrapper ~ .entry-header {
+						.entry-title {
+							margin-top: $spacer;
+						}
+					}
+				}
+			}
+			.type-headline {
+				display: none;
+			}
+		}
+	}
 	.type-headline {
 		color: $primary;
 		display: block;
@@ -58,7 +80,8 @@ body {
 			flex-flow: column wrap;
 			justify-content: flex-start;
 			header.entry-header {
-				margin: 0;
+				margin-left: 0;
+				margin-right: 0;
 				a {
 					&:hover {
 						text-decoration: none;
@@ -112,7 +135,7 @@ body {
 				display: inline-flex;
 				flex-flow: column wrap;
 				margin: $spacer / 2 0;
-				color: lighten($body-color, 30%);
+				color: lighten($body-color, 20%);
 			}
 		}
 	}

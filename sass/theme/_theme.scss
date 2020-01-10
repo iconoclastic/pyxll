@@ -4,8 +4,9 @@
 	.custom-logo-link {
 		margin-left: $spacer;
 		img {
-			width: 50%;
-    		object-fit: contain;
+			width: auto;
+			object-fit: contain;
+			height: 35px;
 		}
 	}
 }
@@ -193,7 +194,11 @@ body {
 }
 
 .widget-area {
-	padding-left: $spacer * 2.5;
+	@include respond-above(sm) {
+		& {
+			padding-left: $spacer * 2.5;
+		}
+	}
 	li {
 		a {
 			font-size: 14px;
@@ -208,6 +213,14 @@ body {
 		margin-bottom: $spacer * 2;
 		&:first-child {
 			margin-top: 0;
+		}
+		&.widget_search {
+			display: none;
+			@include respond-above(sm) {
+				& {
+					display: block;
+				}
+			}
 		}
 		&.widget_recent_entries, &.cat-post-widget {
 			ul {
@@ -311,4 +324,22 @@ div {
 
 .dpsp-networks-btns-wrapper {
 	margin-top: 40px !important;
+}
+
+#top-search-form {
+	display: block;
+	width: calc(100% - #{2 * $spacer});
+	padding-top: 2 * $spacer;
+	padding-bottom: 0;
+	@include respond-above(xs) {
+		& {
+			padding: 2 * $spacer;
+			padding-bottom: 0;
+		}
+	}
+	@include respond-above(sm) {
+		& {
+			display: none;
+		}
+	}
 }

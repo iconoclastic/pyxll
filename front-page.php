@@ -15,6 +15,8 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<div class="container" id="top-search-form"><?php get_search_form(); ?></div>
+
 <div class="wrapper" id="archive-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
